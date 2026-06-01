@@ -1,0 +1,29 @@
+Delivered-To: analyst@yourcompany.com
+Received: by 2002:a05:6a10:e210:0:0:0:0 with SMTP id 12345csp;
+        Mon, 1 Jun 2026 10:15:00 -0700 (PDT)
+Return-Path: <bounces@mail.update-security-paypal.com>
+Received: from mail.update-security-paypal.com (mail.update-security-paypal.com. [103.24.15.99])
+        by mx.google.com with ESMTPS id abcdefg12345.1.2026.06.01.10.15.00
+        for <analyst@yourcompany.com>
+Authentication-Results: mx.google.com;
+       spf=fail (google.com: domain of bounces@mail.update-security-paypal.com does not designate 103.24.15.99 as permitted sender) smtp.mailfrom=bounces@mail.update-security-paypal.com;
+       dkim=fail header.i=@update-security-paypal.com header.s=main header.b=XyZ123;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=paypal.com
+From: "PayPal Security" <security@paypal.com>
+To: analyst@yourcompany.com
+Subject: URGENT: Your Account Has Been Restricted
+Date: Mon, 1 Jun 2026 10:14:55 -0700
+
+Dear Valued Costumer,
+
+We have detected unusual login activity on your account from an unrecognized device. For your protection, we have temporarily restricted your account access.
+
+To restore your account immediatly, please verify your identity by clicking the secure link below:
+
+https://www.paypal.com/us/signin
+<a href="http://www.update-security-paypal.com/login.php?token=8f9a2b">https://www.paypal.com/us/signin</a>
+
+Failure to verify your account within 24 hours will result in permanent suspension.
+
+Thank you,
+PayPaI Security Team
