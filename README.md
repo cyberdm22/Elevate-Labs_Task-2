@@ -7,7 +7,7 @@ Identify phishing characteristics in a suspicious email sample to develop awaren
 
 ## Tools Used
 * Dataset: Raw phishing email sample (.eml text)
-* Tool: MXToolbox / Google Admin Toolbox (Free Online Header Analyzer)
+* Tool: VirusTotal/ AbuseIPDB/ DNS Lookups/ MXToolbox / Google Admin Toolbox (Free Online Header Analyzer)
 
 ## Executive Summary
 This report summarizes the phishing traits found in the analyzed email sample. The email attempts to use social engineering to trick the user into [state the goal, e.g., giving up credentials]. 
