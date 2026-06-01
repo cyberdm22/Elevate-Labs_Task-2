@@ -1,28 +1,26 @@
-# Elevate-Labs_Task-2
-Task 2: Analyse a Phishing Email Sample.
 # Task 2: Analyze a Phishing Email Sample
 
 ## Objective
-Identify phishing characteristics in a suspicious email sample to develop awareness of phishing tactics and email threat analysis skills.
+Identify phishing characteristics in a suspicious email sample.
 
 ## Tools Used
-* Dataset: Raw phishing email sample (.eml text)
-* Tool: VirusTotal/ AbuseIPDB/ DNS Lookups/ MXToolbox / Google Admin Toolbox (Free Online Header Analyzer)
+* **OS:** Kali Linux (Command Line Forensics using `grep`, `less`)
+* **Dataset:** Raw `.eml` phishing sample (`sample_phish.eml`)
+* **Header Analyzer:** Web-based Email Header Analyzer (Google Admin Toolbox / MXToolbox)
 
 ## Executive Summary
-This report summarizes the phishing traits found in the analyzed email sample. The email attempts to use social engineering to trick the user into [state the goal, e.g., giving up credentials]. 
+This repository contains the forensic analysis of a simulated phishing email mimicking PayPal. The analysis confirms the email is a malicious phishing attempt utilizing email spoofing, deceptive URLs, and social engineering tactics designed to harvest user credentials.
 
 ## Phishing Indicators Found
 
-### 1. Social Engineering & Visual Discrepancies
-* **Urgent/Threatening Language:** The email creates a false sense of urgency by stating "[insert quote from email]".
-* **Spelling and Grammar:** Several errors were found, such as "[insert error]". 
-* **Mismatched URLs:** Hovering over the link revealed a deceptive URL. The text displayed was `[fake link]`, but the actual destination was `[malicious link]`.
-* **Suspicious Attachments:** The email included a highly suspicious attachment named `[attachment name]`.
+### 1. Social Engineering & Visual Indicators
+* **Urgency and Threats:** The subject line explicitly uses "URGENT:" and the body utilizes a common pressure tactic, threatening that "Failure to verify your account within 24 hours will result in permanent suspension."
+* **Spelling and Grammar Errors:** The email contains obvious typographical errors, such as "Costumer" instead of Customer, "immediatly" instead of immediately, and a typo-squatted signature "PayPaI" (using a capital 'I' instead of a lowercase 'l').
+* **Mismatched URLs (Link Spoofing):** Extracting the URLs revealed a discrepancy. The visible text in the email implies a secure link (`https://www.paypal.com/us/signin`), but the underlying HTML `href` attribute directs the victim to an unencrypted, malicious site: `http://www.update-security-paypal.com/login.php?token=8f9a2b`.
 
 ### 2. Technical Header Analysis & Spoofing
-* **Sender Discrepancy:** Examining the sender's email address for spoofing revealed that while the `From` address was `[fake sender]`, the actual `Return-Path` was `[real attacker email]`.
-* **Header Discrepancies:** The header analysis tool flagged that the sender failed SPF and DKIM authentication checks, confirming the email is spoofed.
+* **Sender Mismatch:** The `From:` address is forged to look like `security@paypal.com`, but extracting the `Return-Path:` reveals the true sender domain as `bounces@mail.update-security-paypal.com`.
+* **Authentication Failures:** Analysis of the email routing headers shows that SPF, DKIM, and DMARC all registered as `fail`. The sending IP (`103.24.15.99`) is not authorized to send emails on behalf of the legitimate `paypal.com` domain.
 
 ## Conclusion
-Based on the urgent language, mismatched URLs, and failed header authentication, this email is a confirmed phishing attempt.
+Based on the failed authentication headers, mismatched deceptive URLs, and high-pressure social engineering tactics, this email is a confirmed phishing attempt.
