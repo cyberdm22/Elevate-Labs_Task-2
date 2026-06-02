@@ -1,3 +1,4 @@
+
 # Task 2: Analyze a Phishing Email Sample
 
 ## Objective
@@ -24,3 +25,4 @@ This repository contains the forensic analysis of a simulated phishing email mim
 
 ## Conclusion
 Based on the failed authentication headers, mismatched deceptive URLs, and high-pressure social engineering tactics, this email is a confirmed phishing attempt.
+
